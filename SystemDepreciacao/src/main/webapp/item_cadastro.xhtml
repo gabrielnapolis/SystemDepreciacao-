@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>SystemDepreciação [versão 0.1]</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2" border="1">
+			<f:facet name="header">			
+				<h:outputText value="Cadastro de Itens"/>
+			</f:facet>
+			
+			<h:outputText value="Descrição: "/>
+ 			<h:inputText value="#{itemView.item.descricao}"/>
+			
+			<h:outputText value="Custo do Bem: "/>
+ 			<h:inputText value="#{itemView.item.custoDoBem}"/>
+ 			
+			<h:outputText value="Valor Residual: "/>
+			<h:inputText value="#{itemView.item.valorResidual}"/> 
+			
+			<h:outputText value="Data de aquisição: "/>
+ 			<h:inputText value="#{itemView.item.dataAquisicao}"/> 
+ 			
+ 			<h:outputText value="Valor de Venda "/>
+ 			<h:inputText value="#{itemView.item.valorVenda}"/>
+					
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">	
+			<h:commandButton value="Cadastrar" action="#{itemView.Cadastar}"/>			
+			<h:commandButton value="Lista de Itens" action="item_listagem"/>
+		</h:panelGrid>	
+	</h:form>
+	
+</h:body>
+</html>
