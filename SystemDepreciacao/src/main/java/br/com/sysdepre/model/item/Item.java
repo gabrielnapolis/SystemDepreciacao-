@@ -9,6 +9,7 @@ public class Item implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String descricao;
+	private int vidaUtil;
 	private double custoDoBem;
 	private double valorResidual;
 	private Date dataAquisicao;
@@ -17,6 +18,12 @@ public class Item implements Serializable{
 	private int taxaDepre;
 	
 	
+	public int getVidaUtil() {
+		return vidaUtil;
+	}
+	public void setVidaUtil(int vidaUtil) {
+		this.vidaUtil = vidaUtil;
+	}
 	public Date getDataVenda() {
 		return dataVenda;
 	}
