@@ -49,6 +49,13 @@
 			
 			<h:column>
 				<f:facet name="header">
+					<h:outputLabel value="Data de Venda" />
+				</f:facet>
+				<h:outputLabel value="#{it.dataVenda}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
 					<h:outputLabel value="Valor de Venda" />
 				</f:facet>
 				<h:outputLabel value="#{it.valorVenda}" />
@@ -58,7 +65,7 @@
 				<f:facet name="header">
 					<h:outputLabel value="Consultar Depreciação" />
 				</f:facet>
-				<h:commandLink action="#{itemView.Cadastar}">
+				<h:commandLink >
 					<h:graphicImage library="icones" name="edit.png" />
 					<f:setPropertyActionListener value="#{it}"
 						target="#{itemView.item}" />

@@ -26,10 +26,16 @@
 			<h:outputText value="Valor Residual: "/>
 			<h:inputText value="#{itemView.item.valorResidual}"/> 
 			
-			<h:outputText value="Data de aquisição: "/>
+			<h:outputText value="Data de Aquisição: "/>
  			<h:inputText value="#{itemView.item.dataAquisicao}">
  				<f:convertDateTime pattern="dd/MM/yyyy"/>
  			</h:inputText> 
+ 			
+ 			<h:outputText value="Data de Venda: "/>
+ 			<h:inputText value="#{itemView.item.dataVenda}">
+ 				<f:convertDateTime pattern="dd/MM/yyyy"/>
+ 			</h:inputText> 
+ 			
  			
  			<h:outputText value="Valor de Venda: "/>
  			<h:inputText value="#{itemView.item.valorVenda}"/>

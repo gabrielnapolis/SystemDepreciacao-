@@ -10,7 +10,7 @@ public class ConnectFactory {
 	private final String DRIVER = "org.postgresql.Driver";
 	private final String URL = "jdbc:postgresql://localhost:5432/bd_depre";
 	private final String USER = "postgres";
-	private final String PASSWORD = " ";
+	private final String PASSWORD = "aluno";
 	
 	public void closeConnection(Connection con, PreparedStatement ps){
 		try {

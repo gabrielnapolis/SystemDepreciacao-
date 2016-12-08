@@ -16,8 +16,7 @@ public class ItemDAO extends ConnectFactory {
 	ResultSet rs;
 
 	public void insert(Item i) {
-		String sql = "INSERT INTO item (descricao, custoDoBem, valorResidual,"
-				+ " dataAquisicao, valorVenda) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO item (descricao, custoDoBem, valorResidual, dataAquisicao, dataVenda, valorVenda) VALUES (?,?,?,?,?,?)";
 
 		try {
 			con = openConnection();
@@ -26,7 +25,8 @@ public class ItemDAO extends ConnectFactory {
 			ps.setDouble(2, i.getCustoDoBem());
 			ps.setDouble(3, i.getValorResidual());
 			ps.setDate(4, new Date (i.getDataAquisicao().getTime()));
-			ps.setDouble(5, i.getValorVenda());
+			ps.setDate(5, new Date (i.getDataVenda().getTime()));
+			ps.setDouble(6, i.getValorVenda());
 			ps.executeUpdate();
 		}
 		catch (Exception e) {
@@ -41,8 +41,7 @@ public class ItemDAO extends ConnectFactory {
 
 	public List<Item> listar() {
 		List<Item> lista = null;
-		String sql = "Select descricao, custoDoBem, valorResidual, dataAquisicao, "
-				+ "valorVenda FROM item ORDER BY descricao";
+		String sql = "SELECT descricao, custodobem, valorresidual, dataaquisicao, datavenda, valorvenda FROM item ORDER BY descricao";
 
 		try {
 			con = openConnection();
@@ -57,6 +56,7 @@ public class ItemDAO extends ConnectFactory {
 				i.setCustoDoBem(rs.getDouble("custoDoBem"));
 				i.setValorResidual(rs.getDouble("valorResidual"));
 				i.setDataAquisicao(rs.getDate("dataAquisicao"));
+				i.setDataVenda(rs.getDate("dataVenda"));
 				i.setValorVenda(rs.getDouble("valorVenda"));
 				lista.add(i);
 			}
