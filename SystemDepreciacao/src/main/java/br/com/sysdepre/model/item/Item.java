@@ -16,8 +16,15 @@ public class Item implements Serializable{
 	private Date dataVenda;
 	private double valorVenda;
 	private int taxaDepre;
+	private int turno;
 	
 	
+	public int getTurno() {
+		return turno;
+	}
+	public void setTurno(int turno) {
+		this.turno = turno;
+	}
 	public int getVidaUtil() {
 		return vidaUtil;
 	}
