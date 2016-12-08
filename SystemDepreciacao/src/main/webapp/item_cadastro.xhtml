@@ -27,9 +27,11 @@
 			<h:inputText value="#{itemView.item.valorResidual}"/> 
 			
 			<h:outputText value="Data de aquisição: "/>
- 			<h:inputText value="#{itemView.item.dataAquisicao}"/> 
+ 			<h:inputText value="#{itemView.item.dataAquisicao}">
+ 				<f:convertDateTime pattern="dd/MM/yyyy"/>
+ 			</h:inputText> 
  			
- 			<h:outputText value="Valor de Venda "/>
+ 			<h:outputText value="Valor de Venda: "/>
  			<h:inputText value="#{itemView.item.valorVenda}"/>
 					
 		</h:panelGrid>

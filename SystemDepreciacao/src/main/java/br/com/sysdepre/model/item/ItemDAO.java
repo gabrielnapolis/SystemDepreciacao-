@@ -1,6 +1,7 @@
 package br.com.sysdepre.model.item;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class ItemDAO extends ConnectFactory {
 			ps.setString(1, i.getDescricao());
 			ps.setDouble(2, i.getCustoDoBem());
 			ps.setDouble(3, i.getValorResidual());
-			ps.setString(4, i.getDataAquisicao());
+			ps.setDate(4, new Date (i.getDataAquisicao().getTime()));
 			ps.setDouble(5, i.getValorVenda());
 			ps.executeUpdate();
 		}
@@ -54,7 +55,8 @@ public class ItemDAO extends ConnectFactory {
 				Item i = new Item();
 				i.setDescricao(rs.getString("descricao"));
 				i.setCustoDoBem(rs.getDouble("custoDoBem"));
-				i.setValorResidual(rs.getDouble("dataAquisicao"));
+				i.setValorResidual(rs.getDouble("valorResidual"));
+				i.setDataAquisicao(rs.getDate("dataAquisicao"));
 				i.setValorVenda(rs.getDouble("valorVenda"));
 				lista.add(i);
 			}

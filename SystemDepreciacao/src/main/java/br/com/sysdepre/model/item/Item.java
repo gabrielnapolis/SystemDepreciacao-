@@ -1,6 +1,7 @@
 package br.com.sysdepre.model.item;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 public class Item implements Serializable{
@@ -10,11 +11,18 @@ public class Item implements Serializable{
 	private String descricao;
 	private double custoDoBem;
 	private double valorResidual;
-	private String dataAquisicao;
+	private Date dataAquisicao;
+	private Date dataVenda;
 	private double valorVenda;
 	private int taxaDepre;
 	
 	
+	public Date getDataVenda() {
+		return dataVenda;
+	}
+	public void setDataVenda(Date dataVenda) {
+		this.dataVenda = dataVenda;
+	}
 	public String getDescricao() {
 		return descricao;
 	}
@@ -33,10 +41,10 @@ public class Item implements Serializable{
 	public void setValorResidual(double valorResidual) {
 		this.valorResidual = valorResidual;
 	}
-	public String getDataAquisicao() {
+	public Date getDataAquisicao() {
 		return dataAquisicao;
 	}
-	public void setDataAquisicao(String dataAquisicao) {
+	public void setDataAquisicao(Date dataAquisicao) {
 		this.dataAquisicao = dataAquisicao;
 	}
 	public double getValorVenda() {
