@@ -65,27 +65,28 @@ public class ItemRN implements Serializable{
 	}
 	
 	
-	
-	
-	
-	
-	@SuppressWarnings("unused")
 	public double CalcularDepreciacao(Item i){
 		double DA = 0;
-
 		double CB = i.getCustoDoBem();
 		int TX = CalcularTaxa(i);
 		int N = CalcularPeriodo(i);
 		double VR = i.getValorResidual();
 		
-		
-		
-		
+		DA = (CB-VR)*TX/12 * N;
+			
 		return DA;
 	}
 	
 	
+	public double CalcularValorContabil(Item i){
+		double ValorContabil=0; 
+		double CB=i.getCustoDoBem();
+		double DA=CalcularDepreciacao(i);
+		
+		ValorContabil = CB - DA; 
 	
+		return ValorContabil;
+	}
 	
 	
 	
