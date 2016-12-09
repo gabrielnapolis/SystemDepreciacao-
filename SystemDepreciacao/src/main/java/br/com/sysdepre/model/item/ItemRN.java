@@ -19,7 +19,7 @@ public class ItemRN implements Serializable{
 	
 	@SuppressWarnings("unused")
 	public int CalcularPeriodo(Item i){
-			int qntAnos = 0;
+			int periodo = 0;
 			
 			//Conversão de Datas para String
 			String dataCompra = i.getDataAquisicao().toString();
@@ -43,11 +43,18 @@ public class ItemRN implements Serializable{
 			int anoVenda  = Integer.parseInt(anoVendaString);
 			
 			
-			if(diaCompra <= 15){
-				
-			}
-		
+			//Calcular Ano Inicial
+			if(diaCompra <= 15)
+				periodo = periodo - mesCompra - 1;
+			else
+				periodo = periodo - mesCompra;
 			
-			return qntAnos;
+			//Calcular Ano Final
+			if(diaVenda <= 15)
+				periodo = periodo + mesVenda -1;
+			else
+				periodo = periodo + mesVenda;
+					
+			return periodo;
 	}
 }
