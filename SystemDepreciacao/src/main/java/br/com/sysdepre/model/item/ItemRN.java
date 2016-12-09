@@ -14,4 +14,18 @@ public class ItemRN implements Serializable{
 	public List<Item> listar(){
 		return new ItemDAO().listar();
 	}
+	
+	
+	
+	public int CalcularPeriodo(Item i){
+			int qntAnos = 0;
+			String dataCompra = i.getDataAquisicao().toString();
+			String dataVenda = i.getDataVenda().toString();
+			
+			
+			
+			
+			
+			return qntAnos;
+	}
 }

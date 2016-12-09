@@ -27,7 +27,6 @@ public class ItemBean implements Serializable{
 	}
 	
 	public List<Item> getListar(){
-		return new ItemRN().listar();
-		
+		return new ItemRN().listar();		
 	}
 }

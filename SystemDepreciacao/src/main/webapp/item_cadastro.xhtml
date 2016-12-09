@@ -43,6 +43,7 @@
 			<h:outputText value="Vida Util do Bem: "/>
 			<h:inputText value="#{itemView.item.vidaUtil}"/>
 		</h:panelGrid>
+		
 			<br />
 			<h:outputLabel value="Turnos Trabalhados:"/>
 			<h:selectOneMenu value="#{itemView.item.turno}">
@@ -53,7 +54,6 @@
 		<br />
 		<br />
 		
-
 		<h:panelGrid columns="2">	
 			<h:commandButton value="Cadastrar" action="#{itemView.Cadastar}"/>			
 			<h:commandButton value="Lista de Itens" action="item_listagem"/>
