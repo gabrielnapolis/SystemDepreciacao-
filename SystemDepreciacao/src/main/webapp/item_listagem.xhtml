@@ -1,4 +1,5 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -25,7 +26,7 @@
 				</f:facet>
 				<h:outputLabel value="#{it.descricao}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputLabel value="Custo do Bem" />
@@ -46,28 +47,28 @@
 				</f:facet>
 				<h:outputLabel value="#{it.dataAquisicao}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputLabel value="Data de Venda" />
 				</f:facet>
 				<h:outputLabel value="#{it.dataVenda}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputLabel value="Valor de Venda" />
 				</f:facet>
 				<h:outputLabel value="#{it.valorVenda}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputLabel value="Vida Util" />
 				</f:facet>
 				<h:outputLabel value="#{it.vidaUtil}" />
 			</h:column>
-			
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputLabel value="Turno" />
@@ -79,7 +80,7 @@
 				<f:facet name="header">
 					<h:outputLabel value="Consultar Depreciação" />
 				</f:facet>
-				<h:commandLink >
+				<h:commandLink action="#{itemView.actionCalcular}">
 					<h:graphicImage library="icones" name="edit.png" />
 					<f:setPropertyActionListener value="#{it}"
 						target="#{itemView.item}" />

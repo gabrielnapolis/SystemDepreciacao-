@@ -29,4 +29,14 @@ public class ItemBean implements Serializable{
 	public List<Item> getListar(){
 		return new ItemRN().listar();		
 	}
+	
+	public String actionCalcular() {
+		new DepreciacaoBean().CalcularDepreciacao(item);
+		return "tela_depre";
+	}
+	
+	public String IrParaLista(){
+		return "item_listagem";
+	}
+	
 }

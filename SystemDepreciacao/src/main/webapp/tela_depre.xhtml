@@ -11,62 +11,30 @@
 </h:head>
 
 <h:body>
-	<h:form>
-		<h:panelGrid columns="4" border="1">
-			<f:facet name="header">			
-				<h:outputText value="Dados do Bem"/>
-			</f:facet>
-	
-			<h:outputLabel value="Descrição: "/> 
- 			<h:outputLabel value=" "/>
-			
-			<h:outputLabel value="Custo do Bem: "/>
- 			<h:outputLabel value=" "/>
- 			
-			<h:outputLabel value="Valor Residual: "/>
-			<h:outputLabel value=" "/>	
-			
-			<h:outputLabel value="Data de Aquisição: "/>
-			<h:outputLabel value=" "/>	
- 			
- 			<h:outputLabel value="Data de Venda: "/>
-			<h:outputLabel value=" "/>	
- 			
- 			<h:outputLabel value="Valor de Venda: "/>
-			<h:outputLabel value=" "/>
 
-			<h:outputLabel value="Vida Util do Bem: "/>
-			<h:outputLabel value=" "/>	
-
-			<h:outputLabel value="Turnos Trabalhados:"/>
-			<h:outputLabel value=" "/>
-	</h:panelGrid>		
-	</h:form>
-	<br />
-	
 	<h:form>
+		<h:inputHidden value="#{DepreView.depreciacao}" />
 		<h:panelGrid columns="2" border="1">
-			<f:facet name="header">			
-				<h:outputText value="Dados da Depreciação"/>
+			<f:facet name="header">
+				<h:outputText value="Dados da Depreciação" />
 			</f:facet>
-			
-			<h:outputLabel value="Valor Contábil: "/>
- 			<h:outputLabel value=" "/>
-			
-			<h:outputLabel value="Ganho ou Perda: "/>
- 			<h:outputLabel value=" "/>
- 			
-			<h:outputLabel value="Depreciação Acumulada: "/>
-			<h:outputLabel value=" "/>
 
- 			
-			</h:panelGrid>		
+			<h:outputLabel value="Valor Contábil: " />
+			<h:inputText value="#{DepreView.depreciacao.vc}" />
+
+			<h:outputLabel value="Ganho ou Perda: " />
+			<h:outputLabel value="#{DepreView.depreciacao.gp}" />
+
+			<h:outputLabel value="Depreciação Acumulada: " />
+			<h:outputText value="#{DepreView.depreciacao.da}" />
+		</h:panelGrid>
 	</h:form>
 	<br />
+	
 	<h:panelGrid columns="2">
-		<h:commandButton position="center" value="Cadastrar Novo Item"/>	
-		
-		<h:commandButton position="left" value="Consultar Outras Depreciações"/>
+		<h:commandButton value="Cadastrar Novo Item" action="item_cadastro" />
+
+		<h:commandButton value="Consultar Outras Depreciações" action="item_listagem" />
 	</h:panelGrid>
 </h:body>
 </html>
