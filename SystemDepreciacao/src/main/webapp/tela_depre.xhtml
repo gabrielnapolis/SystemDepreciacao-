@@ -13,28 +13,35 @@
 <h:body>
 
 	<h:form>
-		<h:inputHidden value="#{DepreView.depreciacao}" />
+
 		<h:panelGrid columns="2" border="1">
 			<f:facet name="header">
 				<h:outputText value="Dados da Depreciação" />
 			</f:facet>
 
 			<h:outputLabel value="Valor Contábil: " />
-			<h:inputText value="#{DepreView.depreciacao.vc}" />
+			<h:inputText value="#{itemView.depreciacao.vc}" disabled="true">
+				<f:convertNumber maxFractionDigits="2" />
+			</h:inputText>
 
 			<h:outputLabel value="Ganho ou Perda: " />
-			<h:outputLabel value="#{DepreView.depreciacao.gp}" />
+			<h:inputText value="#{itemView.depreciacao.gp}" disabled="true">
+				<f:convertNumber maxFractionDigits="2" />
+			</h:inputText>
 
 			<h:outputLabel value="Depreciação Acumulada: " />
-			<h:outputText value="#{DepreView.depreciacao.da}" />
+			<h:inputText value="#{itemView.depreciacao.da}" disabled="true">
+				<f:convertNumber maxFractionDigits="2" />
+			</h:inputText>
 		</h:panelGrid>
 	</h:form>
 	<br />
-	
+
 	<h:panelGrid columns="2">
 		<h:commandButton value="Cadastrar Novo Item" action="item_cadastro" />
 
-		<h:commandButton value="Consultar Outras Depreciações" action="item_listagem" />
+		<h:commandButton value="Consultar Outras Depreciações"
+			action="item_listagem" />
 	</h:panelGrid>
 </h:body>
 </html>

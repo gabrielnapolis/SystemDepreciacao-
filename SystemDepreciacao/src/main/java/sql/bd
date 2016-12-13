@@ -1,0 +1,17 @@
+
+CREATE DATA BASE bd_depre;
+
+CREATE TABLE item
+(
+  id seria
+  descricao character varying,
+  custodobem numeric,
+  valorresidual numeric,
+  dataaquisicao date,
+  datavenda date,
+  valorvenda numeric,
+  taxadepre integer,
+  vidautil integer,
+  turno integer,
+  CONSTRAINT item_pkey PRIMARY KEY (id)
+);
